@@ -1,6 +1,6 @@
 from pathlib import Path
-from loguru import logger
 
+from loguru import logger
 
 # Paths
 __file__ = r"C:\Users\mario\OneDrive\Documents\Work\Side Hustles\Kaggle\titanic"
