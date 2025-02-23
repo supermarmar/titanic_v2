@@ -15,7 +15,9 @@ def set_up_plot(title: str, width: int = WIDTH, height: int = HEIGHT):
 
 
 # Continuous variables
-def plot_histogram(df: pd.DataFrame, column: str, bins: int = 30, transformed: bool = False):
+def plot_histogram(
+    df: pd.DataFrame, column: str, bins: int = 30, transformed: bool = False
+):
     color = "red" if not transformed else "orange"
     sns.histplot(
         df[column],
@@ -43,12 +45,16 @@ def plot_boxplot(df: pd.DataFrame, column: str, transformed: bool = False):
 
 
 # Categorical variables or Discrete numerical variables
-def plot_barchart(df: pd.DataFrame, column: str, transformed: bool = False, cat_type: bool = True):
+def plot_barchart(
+    df: pd.DataFrame, column: str, transformed: bool = False, cat_type: bool = True
+):
     if cat_type:
         color = "cyan" if not transformed else "magenta"
     else:
         color = "red" if not transformed else "orange"
-    sns.countplot(x=column, data=df, color=color, linewidth=LINE_WIDTH, edgecolor=EDGE_COLOR)
+    sns.countplot(
+        x=column, data=df, color=color, linewidth=LINE_WIDTH, edgecolor=EDGE_COLOR
+    )
     set_up_plot(f"Bar chart of {column}")
 
 
