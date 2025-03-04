@@ -29,7 +29,9 @@ def plot_bivar_histogram(df: pd.DataFrame, cat_col: str, num_col: str, bins: int
     set_up_plot(f"Histogram of {num_col} by {cat_col}")
 
 
-def plot_multivar_boxplot(df: pd.DataFrame, cat_col: str, num_col: str, cat_col_2: str = None):
+def plot_multivar_boxplot(
+    df: pd.DataFrame, cat_col: str, num_col: str, cat_col_2: str = None
+):
     if cat_col_2 != None:
         sns.boxplot(
             x=cat_col,
@@ -65,7 +67,9 @@ def plot_bivar_barchart(df: pd.DataFrame, x: str, hue: str):
     set_up_plot(f"Bar chart of {x} by {hue}")
 
 
-def plot_multivar_scatterplot(df: pd.DataFrame, x_col: str, y_col: str, hue: str = None):
+def plot_multivar_scatterplot(
+    df: pd.DataFrame, x_col: str, y_col: str, hue: str = None
+):
     if hue == None:
         sns.scatterplot(data=df, x=x_col, y=y_col)
         set_up_plot(f"Scatter plot of {x_col} and {y_col}")
